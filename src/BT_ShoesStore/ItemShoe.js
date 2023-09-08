@@ -2,48 +2,25 @@ import React, { Component } from 'react'
 
 export default class ItemShoe extends Component {
   render() {
+    let {image, name, price} = this.props.item
     return (
-      // <div className="card text-left col-4">
-      //   <img className="card-img-top" alt />
-      //   <div className="card-body">
-      //     <h4 className="card-title">name</h4>
-          // <div>
-          //   <button
-          //     className="btn btn-success"
-          //     // onClick={() => {
-          //     //   handleAdd(item);
-          //     // }}
-          //   >
-          //     Add
-          //   </button>
-          //   <button
-          //     className="btn btn-dark "
-          //     data-toggle="modal"
-          //     data-target="#modelId"
-          //     // onClick={() => handleShowDetail(item)}
-          //   >
-          //     Detail
-          //   </button>
-          // </div>
-      //   </div>
-      // </div>
+
 <div className="col-4">
-  <div className="card text-center">
-    <img className="card-img-top w-5" src="http://svcy3.myclass.vn/images/adidas-prophere.png" alt />
+  <div className="card text-left">
+    <img className="card-img-top w-5" src={image} alt />
     <div className="card-body">
-      <h4 className="card-title">Name</h4>
-      <h5 className="price">Giá$</h5>
+      <h5 className="card-title">{name}</h5>
+      <h6 className="price">{price}$</h6>
       <div>
             <button
-              className="btn btn-success"
-              // onClick={() => {
-              //   handleAdd(item);
-              // }}
+              className="btn btn-success mr-28"
+              onClick={() => {this.props.handleAddToCart(this.props.item);}}
             >
-              Add
+              Add to cart
+              <i class="las la-shopping-cart"></i>
             </button>
             <button
-              className="btn btn-dark "
+              className="btn btn-info "
               data-toggle="modal"
               data-target="#modelId"
               // onClick={() => handleShowDetail(item)}
