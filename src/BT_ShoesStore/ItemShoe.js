@@ -11,7 +11,7 @@ export default class ItemShoe extends Component {
               <h5 className="card-title">{name}</h5>
               <p className='leading-5 text-gray-400'>{shortDescription}</p>
               <h5>{price}$</h5>
-              <div>
+              <div className='mt-1'>
                     <button
                       className="btn btn-success mr-28"
                       onClick={() => {this.props.handleAddToCart(this.props.item);}}

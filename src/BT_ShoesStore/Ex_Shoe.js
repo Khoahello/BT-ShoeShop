@@ -59,13 +59,14 @@ export default class Ex_Shoe extends Component {
     return (
       <div className='container'>
         <header>
-          <h1 className='font-weight-light'>Shoes Shop</h1>
+          <h1 className='font-weight-light mb-20'>Shoes Shop</h1>
         </header>
           <ListShoe list={this.state.shoeArr} handleAddToCart={this.handleAddToCart} handleShowDetail={this.handleShowDetail}/>
           
-        <h1 className='font-weight-light'>Cart <i class="las la-shopping-cart"></i></h1>
+        <h1 className='font-weight-light mt-20 mb-10'>Cart <i class="las la-shopping-cart"></i></h1>
         <CartShoe cart={this.state.cart} handleRemove={this.handleRemove} handleChangeQuantity={this.handleChangeQuantity}/>
         <DetailShoe detail={this.state.detail}/>
+        <br /><br />
       </div>
     )
   }

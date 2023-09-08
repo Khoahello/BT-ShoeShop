@@ -9,7 +9,7 @@ export default class Cart_Shoe extends Component {
       return (
         <tr>
           <td className='align-middle'>{name}</td>
-          <td className='align-middle'>{price}</td>
+          <td className='align-middle'>{price}$</td>
           <td>
             <img className='inline' width={100} src={image} alt="" />
           </td>
