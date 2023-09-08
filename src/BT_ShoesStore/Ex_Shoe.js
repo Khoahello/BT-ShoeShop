@@ -16,14 +16,10 @@ export default class Ex_Shoe extends Component {
       return item.id == shoe.id
     })
     if (index == -1) {
-      // sp chưa có
       let newShoe = {...shoe, soLuong: 1}
       cloneCart.push(newShoe)
-      console.log("🤣 ~ file: Ex_Shoe.js:22 ~ Ex_Shoe ~ cloneCart:", cloneCart)
     } else {
-      // đã có
       cloneCart[index].soLuong++
-      console.log("🤣 ~ file: Ex_Shoe.js:26 ~ Ex_Shoe ~ cloneCart:", cloneCart)
     }
     this.setState ({
       cart: cloneCart
@@ -52,17 +48,24 @@ export default class Ex_Shoe extends Component {
       cart: cloneCart
     })
   }
+
+  handleShowDetail = (shoe) => {
+    let cloneDetailShoe = shoe
+    this.setState ({
+      detail: cloneDetailShoe
+    })
+  }
   render() {
     return (
       <div className='container'>
         <header>
           <h1 className='font-weight-light'>Shoes Shop</h1>
         </header>
-          <ListShoe list={this.state.shoeArr} handleAddToCart={this.handleAddToCart}/>
+          <ListShoe list={this.state.shoeArr} handleAddToCart={this.handleAddToCart} handleShowDetail={this.handleShowDetail}/>
           
         <h1 className='font-weight-light'>Cart <i class="las la-shopping-cart"></i></h1>
         <CartShoe cart={this.state.cart} handleRemove={this.handleRemove} handleChangeQuantity={this.handleChangeQuantity}/>
-        <DetailShoe/>
+        <DetailShoe detail={this.state.detail}/>
       </div>
     )
   }
